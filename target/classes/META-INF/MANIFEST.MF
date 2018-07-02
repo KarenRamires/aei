@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: aei
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: anjyn
+Implementation-Vendor-Id: com.aei
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/aei
+Created-By: Maven Integration for Eclipse
+

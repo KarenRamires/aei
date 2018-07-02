@@ -1,0 +1,89 @@
+<!-- Left side column. contains the sidebar -->
+<aside th:fragment="items">
+	<!-- sidebar: style can be found in sidebar.less -->
+	<section class="sidebar">
+		<!-- Sidebar user panel -->
+		<div class="user-panel">
+			<div class="pull-left image">
+				<img src="/photos/no_image_available.png"
+					th:src="${#authentication.principal.user.picture?.pictureBase64}"
+					class="img-circle" alt="User Image">
+			</div>
+			<div class="pull-left info">
+				<p th:text="${#authentication.principal.user.name}">Alexander
+					Pierce</p>
+				<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+			</div>
+		</div>
+		<!-- search form -->
+		<form action="#" method="get" class="sidebar-form">
+			<div class="input-group">
+				<input type="text" name="q" class="form-control"
+					placeholder="Search..."> <span class="input-group-btn">
+					<button type="submit" name="search" id="search-btn"
+						class="btn btn-flat">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</form>
+		<!-- /.search form -->
+		<!-- sidebar menu: : style can be found in sidebar.less -->
+		<ul class="sidebar-menu">
+			<li class="header">MAIN NAVIGATION</li>
+			<li class="treeview"><a href="#"> <i
+					th:text="#{menu.routine}" class="pe-7s-timer" /> <span> </span> <span
+					class="pull-right-container"> <i class=" pull-right"> </i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a class="ion-clipboard" href="/routine/list"><i
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/routine/new"><i class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <i
+					th:text="#{menu.discipline}" class="pe-7s-science"></i> <span></span>
+					<span class="pull-right-container"> <i class="pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="/discipline/list"><i class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/discipline/new"><i class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <i
+					class="pe-7s-network" th:text="#{menu.content}" /> <span></span>
+					<span class="pull-right-container"> <i class="pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a href="/content/list"><i class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/content/new"><i class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<li routerlinkactive="active" class=""><a href="/activity">
+							<i class="pe-7s-bicycle"></i>
+							<p>Atividades</p>
+					</a>
+				<ul class="treeview-menu">
+					<li><a href="/activity/list"><i class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/activity/new"><i class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <i
+					class="pe-7s-notebook" th:text="#{menu.classPlan}" /> <span></span>
+					<span class="pull-right-container"> <i class="pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a href="/classplan/list"><i class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/classplan/new"><i class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+
+		</ul>
+	</section>
+	<!-- /.sidebar -->
+</aside>

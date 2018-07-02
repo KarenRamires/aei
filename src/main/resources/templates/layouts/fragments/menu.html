@@ -1,0 +1,106 @@
+<!-- Left side column. contains the sidebar -->
+<aside th:fragment="items">
+	<!-- sidebar: style can be found in sidebar.less -->
+	<section class="sidebar">
+		<!-- Sidebar user panel -->
+		<div class="user-panel">
+			<div class="pull-left image">
+				<img src="/photos/no_image_available.png"
+					th:src="${#authentication.principal.user.picture?.pictureBase64}"
+					class="img-circle" alt="User Image">
+			</div>
+			<div class="pull-left info">
+				<p th:text="${#authentication.principal.user.name}">Alexander
+					Pierce</p>
+				<a href="/user/profile"><i class="fa fa-circle text-success"></i>
+					Online</a>
+			</div>
+		</div>
+		<!-- search form -->
+		<!-- <form action="#" method="get" class="sidebar-form">
+			<div class="input-group">
+				<input type="text" name="q" class="form-control"
+					placeholder="Search..."> <span class="input-group-btn">
+					<button type="submit" name="search" id="search-btn"
+						class="btn btn-flat">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</form> -->
+		<!-- /.search form -->
+		<!-- sidebar menu: : style can be found in sidebar.less -->
+		<ul class="sidebar-menu">
+			<!-- DISCIPLINE -->
+			<li class="treeview"><a href="#"> <i class="ion-podium" id="Menu-Discipline"
+					th:text="#{menu.discipline}" /></i> <span></span> <span
+					class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="/discipline/list"><i id="Menu-Discipline-List" class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/discipline/new"><i id="Menu-Discipline-New" class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<!-- CONTENT -->
+			<li class="treeview"><a href="#"> <i id="Menu-Content"
+					class="ion-android-apps " th:text="#{menu.content}" /> <span></span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a href="/content/list"><i id="Menu-Content-List" class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/content/new"><i id="Menu-Content-New" class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<!-- ACTIVITY -->
+			<li class="treeview"><a href="#"> <i id="Menu-Activity"
+					class="ion-android-bicycle" th:text="#{menu.activity}" /> <span></span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a href="/activity/list"><i id="Menu-Activity-List" class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/activity/new"><i id="Menu-Activity-New" class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+			<!-- ROUTINE -->
+			<li class="treeview"><a href="#"> <i id="Menu-Routine"
+					class="ion-ios-timer-outline" th:text="#{menu.routine}" /> <span></span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a class="ion-clipboard" href="/routine/list"><i id="Menu-Routine-List"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/routine/new"><i id="Menu-Routine-New" class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+		<!-- CLASSPLAN -->				
+			<li class="treeview"><a href="#"> <i id="Menu-ClassPlan"
+					class="ion-android-bulb" th:text="#{menu.classPlan}" /> <span></span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span></a>
+				<ul class="treeview-menu">
+					<li><a href="/classPlan/list"><i id="Menu-ClassPlan-List" class="ion-clipboard"
+							th:text="#{menu.list}" /></i> </a></li>
+					<li><a href="/classPlan/new"><i id="Menu-ClassPlan-New" class="ion-plus"
+							th:text="#{menu.new}" /></i> </a></li>
+				</ul></li>
+				<!-- PRINT -->				
+		<!-- 	<li class="treeview"><a href="/report/report"> <i id="Menu-Report"
+					class="ion-android-bulb" th:text="#{menu.report}" /> <span></span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span></a>
+				</li> -->
+
+		</ul>
+	</section>
+	<!-- /.sidebar -->
+</aside>
