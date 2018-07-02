@@ -1,0 +1,141 @@
+<html layout:decorate="~{/layouts/main}">
+
+<head>
+<title th:text="#{activities.list}" />
+</head>
+
+<!-- CONTENT HEADER -->
+<div layout:fragment="content-header">
+	<section class="content-header">
+		<!-- PAGE TITLE -->
+		<h1>
+			<span th:text="#{index.header}" /> <small><span
+				th:text="#{index.title}" /></small>
+		</h1>
+
+	</section>
+</div>
+
+
+
+<div layout:fragment="content">
+
+	<!-- Main content -->
+	<section class="content">
+
+		<!-- Default box -->
+		<div class="box">
+			<div class="box-header with-border">
+				<h3 class="box-title">Atividade</h3>
+
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div id="example2_wrapper"
+					class="dataTables_wrapper form-inline dt-bootstrap">
+					<div class="row">
+						<div class="col-sm-6"></div>
+						<div class="col-sm-6"></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<table id="example2"
+								class="table table-bordered table-hover dataTable" role="grid"
+								aria-describedby="example2_info">
+								<thead>
+									<tr role="row">
+										<th class="sorting_desc" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="Rendering engine: activate to sort column ascending"
+											aria-sort="descending"><span th:text="#{activities.id}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="Browser: activate to sort column ascending"><span
+											th:text="#{activities.name}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="Platform(s): activate to sort column ascending"><span
+											th:text="#{activities.content}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="Engine version: activate to sort column ascending"><span
+											th:text="#{activities.objective}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="CSS grade: activate to sort column ascending"><span
+											th:text="#{activities.procedure}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="CSS grade: activate to sort column ascending"><span
+											th:text="#{activities.resource}" /></th>
+										<th class="sorting" tabindex="0" aria-controls="example2"
+											rowspan="1" colspan="1"
+											aria-label="CSS grade: activate to sort column ascending"><span
+											th:text="#{activities.action}" /></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr role="row" class="even">
+								<tbody>
+									<!---->
+									<!-- <tr role="row" class="even"> -->
+									<tr th:each="activity : ${activityList}" role="row" class="odd">
+										<td th:text="${activity.id}" tabindex="0" class="sorting_1"></td>
+										<td th:text="${activity.name}"></td>
+										<td th:text="${activity.content.name}"></td>
+										<td th:text="${activity.objective}"></td>
+										<td th:text="${activity.procedure}"></td>
+										<td th:text="${activity.resource}"></td>
+										<td class="text-right">
+											<!-- <a
+															class="btn btn-simple btn-info btn-icon like"><i
+																class="fa fa-heart"></i></a> --> <a
+											th:href="@{|/activity/edit/${activity.id}|}"
+											class="deletrow btn bg-olive margin btn-icon edit"><i id="List-Activy-edit" 
+												class="ion-edit"></i></a> <a
+											th:href="@{|/activity/delete/${activity.id}|}"
+											class="btn btn-simple btn-danger btn-icon remove"><i id="List-Activity-remove"
+												class="fa fa-times"></i></a>
+										</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+								<tfoot>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.id}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.name}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.content}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.objective}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.procedure}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.resource}" /></th>
+									<th rowspan="1" colspan="1"><span
+										th:text="#{activities.action}" /></th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+
+					<a id="List-Activity-New" class="btn btn-primary btn-fill" href="#"
+						th:href="@{/activity/new}">Novo</a>
+				</div>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+</div>
+
+</section>
+
+</div>
+</div>
+<!-- /.row -->
+
+</div>
+</html>
